@@ -1,5 +1,6 @@
 package Java.sem1;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Persona extends Human {
@@ -27,7 +28,8 @@ public class Persona extends Human {
         return ArrayPets;
     }
     public void CallPets() {
-        for (Animal i: GetPetsName()){
+        ArrayList<Animal> pets = GetPetsName();
+        for (Animal i:pets ){
             System.out.print(i.name + ": "); 
             i.Voice();
         }

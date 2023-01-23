@@ -1,13 +1,13 @@
 package Java.sem1;
 
 public class Dog extends Animal {
-    public Dog(String Name, String Gender, int Age){
+    public Dog(String Name, String Gender, int Age) {
         SetName(Name);
         SetAge(Age);
         SetGender(Gender);
     }
-    public void Voice (){
+
+    public void Voice() {
         System.out.println("Hau");
     }
 }
-

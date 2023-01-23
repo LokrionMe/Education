@@ -17,7 +17,7 @@ public class Main {
         Daughter.addName(Granddauter);
         Daughter.addName(Grandson2);
         Granddauter2.addName(Grandgranddauter2);
-        TreeView.treeView(Father,0);
+        TreeView.treeView(Father, 0);
         Father.Voice();
         Cat pet1 = new Cat("Pushok", "Male", 2);
         Dog pet2 = new Dog("Raul", "Male", 3);

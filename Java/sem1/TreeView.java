@@ -8,7 +8,7 @@ public class TreeView {
         } else if(b >= 2) {
             line += "["+"great- ".repeat(b-2)+"grandchild] ";
         }
-        line += root.FullName;
+        line += root.GetName();
         if (root.listName.size()!=0){
             System.out.println(line);
             System.out.println(" ".repeat(line.length()) + "|");

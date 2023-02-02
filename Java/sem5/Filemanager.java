@@ -3,6 +3,7 @@ package Java.sem5;
 import java.io.*;
 
 public class Filemanager {
+    ConsoleView viewer = new ConsoleView();
     String FILE_PATH = "./Java/sem5/";
     String FILE_NAME_EXPORT = "export.csv";
 
@@ -11,7 +12,7 @@ public class Filemanager {
             writer.write(book1.getAdressbook());
             writer.flush();
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            viewer.ShowString(ex.getMessage());
         }
     }
 

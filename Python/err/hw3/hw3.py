@@ -9,20 +9,22 @@ class Note:
 
     def __str__(self) -> str:
         return f"{self.second_name} {self.name} {self.patronymic} {self.birthday} {self.number} {self.sex}"
-    
-    def input_second_name(self,string):
+
+    def input_second_name(self, string):
         self.second_name = string
 
-    def input_name(self,string):
+    def input_name(self, string):
         self.name = string
 
-    def input_patronymic(self,string):
+    def input_patronymic(self, string):
         self.patronymic = string
 
-def null_data_person(array:list) -> bool:
+
+def null_data_person(array: list) -> bool:
     return len(array) != 0
 
-def input_data()->list:
+
+def input_data() -> list:
     while True:
         try:
             data_person = str(input("Input data of person: ")).split()
@@ -30,15 +32,17 @@ def input_data()->list:
             if len(data_person) == 6:
                 return data_person
             else:
-                print("Wrong input data\nInput must be:'secondname name patronymic birthday sex number'")
+                print(
+                    "Wrong input data\nInput must be:'secondname name patronymic birthday sex number'")
         except IndexError:
             print("String is empty, try again")
 
-def correct_input(array:list)->Note:
+
+def correct_input(array: list) -> Note:
     new_note = Note()
     list_fio = list()
     for i in array:
-        if (i =="m") or (i == "f"):
+        if (i == "m") or (i == "f"):
             new_note.sex = i
             print("Sex is correct")
         elif i.count(".") == 2:
@@ -55,11 +59,11 @@ def correct_input(array:list)->Note:
     else:
         list_fio_standart = ["secondname", "name", "patronymic"]
         for i in list_fio_standart:
-            input_number_fio(i,list_fio,new_note)
+            input_number_fio(i, list_fio, new_note)
         return new_note
-    
 
-def input_number_fio(string:str,array:list,note:Note):
+
+def input_number_fio(string: str, array: list, note: Note):
     while True:
         for i in range(len(array)):
             print(str(i+1)+". " + array[i])
@@ -67,7 +71,7 @@ def input_number_fio(string:str,array:list,note:Note):
             a = int(input(f"Input number of {string}: "))
         except ValueError:
             print("It must be a number")
-        if a<=0 or a>len(array):
+        if a <= 0 or a > len(array):
             print(f"Number must be > 0 and <{len(array)+1}")
         else:
             if string == "secondname":
@@ -78,6 +82,7 @@ def input_number_fio(string:str,array:list,note:Note):
                 note.input_patronymic(array[a-1])
             array.pop(a-1)
             break
+
 
 while True:
     array_data = input_data()
